@@ -1,0 +1,10 @@
+artifact_location: file:///d:/Data%20Science/Smart-Premium/mlruns/374144569371057413/models/m-765f59b25565467790bff2d64244b25c/artifacts
+creation_timestamp: 1756655505436
+experiment_id: '374144569371057413'
+last_updated_timestamp: 1756655512671
+model_id: m-765f59b25565467790bff2d64244b25c
+model_type: null
+name: model
+source_run_id: 0555839a588d4de6abe58eeb63b3c2de
+status: 2
+status_message: null
