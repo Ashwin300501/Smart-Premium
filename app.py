@@ -77,28 +77,62 @@ st.markdown("Fill in customer details to get a premium estimate.")
 with st.form("prediction_form"):
     st.subheader("Customer Information")
 
-    age = st.number_input("Age", 18, 80, 30)
-    gender = st.selectbox("Gender", ["Male", "Female"])
-    income = st.number_input("Annual Income ($)", 1000, 200000, 60000, step=1000)
-    marital_status = st.selectbox("Marital Status", ["Single", "Married", "Divorced"])
-    dependents = st.number_input("Number of Dependents", 0, 10, 0)
+    # Row 1
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        age = st.number_input("Age", 18, 80, 30)
+    with col2:
+        gender = st.selectbox("Gender", ["Male", "Female"])
+    with col3:
+        income = st.number_input("Annual Income ($)", 1000, 200000, 60000, step=1000)
 
-    education = st.selectbox("Education Level", ["High School", "Bachelor's", "Master's", "PhD"])
-    occupation = st.selectbox("Occupation", ["Employed", "Self-Employed", "Unemployed"])
+    # Row 2
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        marital_status = st.selectbox("Marital Status", ["Single", "Married", "Divorced"])
+    with col2:
+        dependents = st.number_input("Number of Dependents", 0, 10, 0)
+    with col3:
+        education = st.selectbox("Education Level", ["High School", "Bachelor's", "Master's", "PhD"])
 
-    health_score = st.number_input("Health Score (0-100)", 0, 100, 70)
-    smoking_status = st.selectbox("Smoking Status", ["Yes", "No"])
-    exercise = st.selectbox("Exercise Frequency", ["Daily", "Weekly", "Monthly", "Rarely"])
+    # Row 3
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        occupation = st.selectbox("Occupation", ["Employed", "Self-Employed", "Unemployed"])
+    with col2:
+        health_score = st.number_input("Health Score (0-100)", 0, 100, 70)
+    with col3:
+        smoking_status = st.selectbox("Smoking Status", ["Yes", "No"])
 
-    location = st.selectbox("Location", ["Urban", "Suburban", "Rural"])
-    policy_type = st.selectbox("Policy Type", ["Basic", "Comprehensive", "Premium"])
-    prev_claims = st.number_input("Previous Claims", 0, 20, 0)
-    vehicle_age = st.number_input("Vehicle Age (years)", 0, 30, 5)
-    credit_score = st.number_input("Credit Score", 300, 850, 700)
-    duration = st.number_input("Insurance Duration (years)", 1, 20, 5)
-    property_type = st.selectbox("Property Type", ["House", "Apartment", "Condo"])
+    # Row 4
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        exercise = st.selectbox("Exercise Frequency", ["Daily", "Weekly", "Monthly", "Rarely"])
+    with col2:
+        location = st.selectbox("Location", ["Urban", "Suburban", "Rural"])
+    with col3:
+        policy_type = st.selectbox("Policy Type", ["Basic", "Comprehensive", "Premium"])
+
+    # Row 5
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        prev_claims = st.number_input("Previous Claims", 0, 20, 0)
+    with col2:
+        vehicle_age = st.number_input("Vehicle Age (years)", 0, 30, 5)
+    with col3:
+        credit_score = st.number_input("Credit Score", 300, 850, 700)
+
+    # Row 6
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        duration = st.number_input("Insurance Duration (years)", 1, 20, 5)
+    with col2:
+        property_type = st.selectbox("Property Type", ["House", "Apartment", "Condo"])
+    with col3:
+        st.write("")  # empty placeholder
 
     submitted = st.form_submit_button("Predict Premium 💰")
+
 
 #Prediction
 if submitted:
